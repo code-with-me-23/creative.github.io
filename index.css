@@ -142,7 +142,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 80vh;
-  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmqE53h9nW34DRzmoJ6isPOJa3Bhdt2zTVXQ&s) no-repeat center/cover;
+  background: url(images/student-study-bg.png) no-repeat center/cover;
   text-align: center;
   color: white;
   position: relative;
@@ -214,11 +214,17 @@ body {
 /* navigation-end  */
 
 /* main-banner  */
+.motive img {
+max-width: 2000px;
+width:auto;
+height:200px;
+/* display: flex; */
+}
 
 .main-banner {
-  background: linear-gradient(to right, #005a87, #00b4db);
+  /* background: linear-gradient(to right, #005a87, #00b4db); */
   color: white;
-  padding: 20px;
+  /* padding: 20px; */
   font-size: 2.5rem;
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -485,11 +491,12 @@ a{
 }
 
 .about-image img {
-  width: 85%;
+  /* width: 85%; */
   max-width: 500px;
   border-radius: 15px;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2); */
   /* transition: transform 0.3s ease-in-out; */
+  background-color: white;
 }
 
 /* .about-image img:hover {
@@ -921,7 +928,7 @@ a{
 /* form  */
 
 .form-body {
-  background: linear-gradient(to right, #ff512f, #dd2476);
+  /* background: linear-gradient(to right, #ff512f, #dd2476); */
   color: black;
   display: flex;
   justify-content: center;
@@ -1011,4 +1018,233 @@ a{
 
 /* form end  */
 
+/* feedback  */
+.body-feedback {
+  font-family: Arial, sans-serif;
+  /* height: 100vh; */
+  background-color: #f3f3f3;
+  margin: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: nowrap;
+}
+.card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+}
+.inner-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.front {
+  text-align: center;
+}
+.front img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.stars label {
+  font-size: 30px;
+  color: gray;
+  cursor: pointer;
+}
+.stars input:checked ~ label {
+  color: gold;
+}
+.feedback-input, .name-input {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.submit-btn {
+  margin-top: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* end  */
 
+/* climate  */
+
+.climate-section {
+  text-align: center;
+  background: url(images/climate-change.jpg) no-repeat center
+    center/cover;
+  padding: 80px 20px;
+  color: white;
+  position: relative;
+}
+
+.climate-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.climate-content {
+  position: relative;
+  z-index: 2;
+}
+
+.climate-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.climate-section p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.underline {
+  display: inline-block;
+  width: 60px;
+  height: 4px;
+  background-color: yellow;
+  margin-top: 10px;
+}
+/* end  */
+
+
+/* footer section  */
+
+footer {
+  background:rgb(148, 147, 147);
+  color: black;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo img {
+  height: 80px;
+}
+
+.footer-logo p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 5px 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color:black;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+  color: #28a745;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a img {
+  width: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  background: #111;
+  color: wheat;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* end  */
+
+/* chat support  */
+.chat-support {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.chat-support:hover {
+  background: #1ebe5d;
+}
+.chat-support-insta{
+  position: fixed;
+  bottom: 20px;
+  /* right: 20px; */
+  background:rgb(232, 67, 67);
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.chat-support-insta:hover {
+background-color: black;
+}
+/* end  */
