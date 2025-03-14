@@ -214,14 +214,17 @@ body {
 /* navigation-end  */
 
 /* main-banner  */
-.motive img {
-max-width: 2000px;
-width: 460px;
-height:auto;
-/* display: flex; */
-}
+/* .motive img {
+width:auto;
+height:200px;
+} */
 
 .main-banner {
+  background-image: url(images/motive.jpg);
+  background-position: center;
+  background-size:contain;
+  background-repeat: no-repeat;
+  
   /* background: linear-gradient(to right, #005a87, #00b4db); */
   color: white;
   /* padding: 20px; */
