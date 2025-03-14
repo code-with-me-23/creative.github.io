@@ -216,8 +216,8 @@ body {
 /* main-banner  */
 .motive img {
 max-width: 2000px;
-width:auto;
-height:200px;
+width: 500px;
+height:auto;
 /* display: flex; */
 }
 
