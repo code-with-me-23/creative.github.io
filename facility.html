@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Page</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .bg {
+            /* Removed background-color property */
+            height: 100%;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            color: white;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+        }
+        .navbar a:hover {
+            background-color: #575757;
+        }
+        .navbar .toggle-button {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .navbar .toggle-button div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+        .navbar-links {
+            display: flex;
+        }
+        .navbar-links a {
+            margin-left: 10px;
+        }
+        @media (max-width: 768px) {
+            .navbar .toggle-button {
+                display: flex;
+            }
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            .navbar-links.active {
+                display: flex;
+            }
+            .navbar-links a {
+                text-align: center;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+.facility-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .facility-box {
+                width: 90%;
+                margin: 10px 0;
+            }
+        }
+        .heading {
+            text-align: center;
+            margin-top: 100px;
+            color: #333;
+                    }
+        .facility-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px; /* Reduced the top margin */
+        }
+        .facility-box {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        .facility-box img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .facility-box h2 {
+            margin: 10px 0;
+        }
+        .download-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .year-dropdown {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-section {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .contact-section h2 {
+            margin-bottom: 20px;
+        }
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-section input, .contact-section textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-section button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-section button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: auto;
+        }
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+@media (max-width: 768px) {
+            .footer {
+padding: 10px;
+font-size: 14px;
+         }
+            .footer p {
+                margin: 5px 0;
+            }
+            .footer a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+    <script>
+        function downloadPaper(subject, year) {
+            const link = document.createElement('a');
+            link.href = `${subject}_papers_${year}.zip`;
+            link.download = `${subject}_papers_${year}.zip`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        function toggleNavbar() {
+            const navbarLinks = document.querySelector('.navbar-links');
+            navbarLinks.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="bg">
+        <div class="navbar">
+            <div class="logo">Facility</div>
+            <div class="toggle-button" onclick="toggleNavbar()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="navbar-links">
+                <a href="#home">Home</a>
+                <a href="#facilities">Facilities</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <h1 class="heading">Welcome to Our Facility</h1>
+        <div class="facility-container">
+            <div class="facility-box">
+                <img src="facility1.jpg" alt="Facility 1">
+                <h2>Facility 1</h2>
+                <p>Description of Facility 1.</p>
+            </div>
+            <div class="facility-box">
+                <img src="facility2.jpg" alt="Facility 2">
+                <h2>Facility 2</h2>
+                <p>Description of Facility 2.</p>
+            </div>
+            <div class="facility-box">
+                <img src="facility3.jpg" alt="Facility 3">
+                <h2>Facility 3</h2>
+                <p>Description of Facility 3.</p>
+            </div>
+            <div class="facility-box">
+                <img src="facility4.jpg" alt="Facility 4">
+                <h2>Facility 4</h2>
+                <p>Description of Facility 4.</p>
+            </div>
+            <div class="facility-box">
+                <img src="facility5.jpg" alt="Facility 5">
+                <h2>Facility 5</h2>
+                <p>Description of Facility 5.</p>
+            </div>
+            <div class="facility-box">
+                <img src="facility6.jpg" alt="Facility 6">
+                <h2>Facility 6</h2>
+                <p>Description of Facility 6.</p>
+            </div>
+        </div>
+        <h2 class="heading">Study Resources and Notes</h2>
+        <div class="facility-container">
+            <div class="facility-box">
+                <img src="resource1.jpg" alt="Resource 1">
+                <h2>Mathematics Notes</h2>
+                <p>Description of Mathematics Notes.</p>
+                <a href="math_notes.pdf" class="download-button" download>Download Notes</a>
+                <select class="year-dropdown" onchange="downloadPaper('math', this.value)">
+                    <option value="">Last 5 Years Papers</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+            <div class="facility-box">
+                <img src="resource2.jpg" alt="Resource 2">
+                <h2>Physics Notes</h2>
+                <p>Description of Physics Notes.</p>
+                <a href="physics_notes.pdf" class="download-button" download>Download Notes</a>
+                <select class="year-dropdown" onchange="downloadPaper('physics', this.value)">
+                    <option value="">Last 5 Years Papers</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+            <div class="facility-box">
+                <img src="resource3.jpg" alt="Resource 3">
+                <h2>Chemistry Notes</h2>
+                <p>Description of Chemistry Notes.</p>
+                <a href="chemistry_notes.pdf" class="download-button" download>Download Notes</a>
+                <select class="year-dropdown" onchange="downloadPaper('chemistry', this.value)">
+                    <option value="">Last 5 Years Papers</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+            <div class="facility-box">
+                <img src="resource4.jpg" alt="Resource 4">
+                <h2>Biology Notes</h2>
+                <p>Description of Biology Notes.</p>
+                <a href="biology_notes.pdf" class="download-button" download>Download Notes</a>
+                <select class="year-dropdown" onchange="downloadPaper('biology', this.value)">
+                    <option value="">Last 5 Years Papers</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+            <div class="facility-box">
+                <img src="resource5.jpg" alt="Resource 5">
+                <h2>English Notes</h2>
+                <p>Description of English Notes.</p>
+                <a href="english_notes.pdf" class="download-button" download>Download Notes</a>
+                <select class="year-dropdown" onchange="downloadPaper('english', this.value)">
+                    <option value="">Last 5 Years Papers</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+        </div>
+        <div class="contact-section" id="contact">
+            <h2>Contact Us</h2>
+            <form action="contact.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="footer">
+            <p>&copy; 2023 Facility. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="#">Facebook</a>, 
+                <a href="#">Twitter</a>, 
+                <a href="#">Instagram</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

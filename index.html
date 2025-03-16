@@ -6,12 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Creative coaching classes</title>
   <link rel="icon" href="images/coaching-logo2.png" type="image/png">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="index2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 </head>
 
 <body>
+  <!-- <div id="loader" class="loader">
+    <div class="loader-text">CREATIVE Coaching</div>
+  </div> -->
   <!-- navigation-bar-start  -->
 
   <nav class="navbar">
@@ -33,16 +36,11 @@
 
   <!-- banner 1  -->
 
-<br>
   <div class="main-banner">
     <div class="logo">
-      <img src="assets/img/graduated.png" alt="">
+      <!-- <img src="assets/img/graduated.png" alt=""> -->
     </div>
-    <br><br><br><br><br>
-  </div><br>
-  <!-- <div class="education-thought">
-    "Education is the passport to the future, for tomorrow belongs to those who prepare for it today."
-  </div> -->
+      </div>
   <section class="banner">
     <div class="banner-content">
       <h1>Learning Today, Leading Tomorrow</h1>
@@ -61,7 +59,7 @@
   <!-- coach-information  -->
 
   <div class="text">
-    <h1 style="font-size: 40px;padding-top: 20px;">Coach- Information</h1>
+    <h1>Coach- Information</h1>
   </div>
   <section class="coach-section">
 
@@ -69,7 +67,7 @@
       <img src="images/" alt="Coach Photo">
     </div>
     <div class="coach-info">
-      <h2 style="color: black;">Coach :- Mr Ravindr Nagar</h2>
+      <h2>Coach :- Mr Ravindr Nagar</h2>
       <p><strong>Qualification:</strong>Chemistry master</p>
       <p><strong>Experience:</strong> 6+ years of teaching</p>
       <p><strong>Expertise:</strong></p>
@@ -81,7 +79,7 @@
   <!-- -------------------------------------------------------------------------------------------------- -->
 <!-- about-coaching  -->
 
-<div class="text" id="about" style="font-size: 40px;">About-coaching</div>
+<div class="text" id="about" style="font-size: 30px;">About-coaching</div>
     <section class="about-section" id="about">
         <div class="about-container">
             <div class="about-content">
@@ -93,21 +91,18 @@
                 <H2>Empowering Future Leaders</H2>
                 <p>
                     At<strong> Creative Coaching,</strong> we believe in shaping bright minds with personalized
-                    learning, expert<br>
-                    mentorship,
-                    and a curriculum designed for success. Our approach blends innovation with traditional values<br> to
+                    learning, expert mentorship, and a curriculum designed for success. Our approach blends innovation with traditional values to
                     foster academic excellence and personal growth.
                 </p>
                 <p>
                     Join us to experience world-class coaching, state-of-the-art learning resources, and a
-                    supportive<br>
-                    community that drives you toward achieving your dreams.
-                </p><br>
+                    supportive community that drives you toward achieving your dreams.
+                </p>
                 <button class="btn"><i class="animation"></i><a href="">enroll now</a><i class="animation"></i>
-                </button><br><br><br>
+                </button>
             </div>
         </div>
-   </section>
+   </section><br>
 
     <!-- about-coaching-end  -->
 
@@ -159,55 +154,36 @@
             <p class="course-description">Discover the wonders of life, from cells to ecosystems, and learn about
                 the science behind living organisms.</p>
         </div>
+</div>
+</section>
+
 <!-- ---------------------------------------------------------------------------  -->
 
         <!-- study source  -->
         <div class="resources-section">
             <h2>📘 Study Materials & Resources</h2>
             <p>Download Notes <br>and<br> Sample Papers</p>
-            <a href="https://t.me/YOUR_TELEGRAM_CHANNEL" target="_blank" class="download-link">Download Now</a>
+            <a href="facility.html" target="_blank" class="download-link">Download Now</a>
         </div>
 
+        
         <!-- ---------------------------------------------------------------------------  -->
 
         <div class="facility-section" id="facilities">
             <div class="box-container">
-                <h1>Our Facilities <br><img src="assets/img/coaching logo.jpeg" alt=""></h1>
-                <div style="margin-top: 20px;">
-                    <button class="facility-button" onclick="togglePopup()">View Facilities</button>
-                </div>
-            </div>
-
-            <div class="popup-overlay" id="facilityPopup">
-                <div class="popup">
-                    <button class="back-button" onclick="togglePopup()">Back</button>
-                    <div class="facility-container">
-                        <div class="facility">1. High-speed WiFi <img src="https://via.placeholder.com/50"
-                                alt="WiFi"></div>
-                        <div class="facility">2. 24/7 Library Access <img src="https://via.placeholder.com/50"
-                                alt="Library"></div>
-                        <div class="facility">3. Modern Computer Labs <img src="https://via.placeholder.com/50"
-                                alt="Computer Lab"></div>
-                        <div class="facility">4. Professional Mentorship <img src="https://via.placeholder.com/50"
-                                alt="Mentorship"></div>
-                        <div class="facility">5. Career Counseling <img src="https://via.placeholder.com/50"
-                                alt="Counseling"></div>
-                        <div class="facility">6. Sports Complex <img src="https://via.placeholder.com/50"
-                                alt="Sports"></div>
-                    </div>
-                </div>
+                <h1>Our Facilities</h1>
+<img src="images/coaching-logo.jpeg" alt="">
+<button class="facility-button"><a href="facility.html">View</a></button>
             </div>
         </div>
-    </div>
-</section>
-
+    
 <!-- course-end  -->
 
 <!-- ----------------------------------------------------------------------  -->
 
 <!-- last-year-result  -->
 
-<div class="text" style="font-size: 40px;">Last Year Result</div>
+<div class="text">Last Year Result</div>
 
 <div class="result-body">
     <div class="container">
@@ -342,7 +318,7 @@
                   <input type="text" id="course" required placeholder="Preferred Course">
               </div>
 
-              <button class="btn"><i class="animation"></i><a href="">enroll now</a><i class="animation"></i>
+              <button class="btn" id="enrollButton"><i class="animation"></i><a href="">enroll now</a><i class="animation"></i>
               </button>
           </form>
   </div>
@@ -450,7 +426,7 @@
  
 <!-- ----------------------------------------------------------------------  -->
 
-  <script src="js.js"></script>
+  <script src="js2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
   <!-- count-section-start  -->
@@ -491,11 +467,28 @@ document.addEventListener("DOMContentLoaded", () => {
     function togglePopup() {
     const popupOverlay = document.getElementById('facilityPopup');
     popupOverlay.classList.toggle('active');
+document.body.classList.toggle('popup-active');
 }
   </script>
 
 <!-- facility end  -->
 <!-- ------------------------------------------------------------------------------  -->
+
+  <script>
+    function togglePapersPopup() {
+        const popupOverlay = document.getElementById('papersPopup');
+        popupOverlay.classList.toggle('active');
+        document.body.classList.toggle('popup-active');
+    }
+  </script>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.getElementById('loader').style.display = 'none';
+      }, 2000); // 2 seconds
+    });
+  </script>
 </body>
 
 </html>
