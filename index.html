@@ -8,6 +8,9 @@
   <link rel="icon" href="images/coaching-logo2.png" type="image/png">
   <link rel="stylesheet" href="index2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 
 </head>
 
@@ -17,16 +20,16 @@
   </div> -->
   <!-- navigation-bar-start  -->
 
-  <nav class="navbar">
-    <div class="logo">CREATIVE<sub> Coaching</sub></div>
+  <nav class="navbar glassmorphism">
+    <div class="logo"><i class="fas fa-graduation-cap"></i> CREATIVE<sub> Coaching</sub></div>
     <div class="menu-toggle" onclick="toggleMenu(event)">&#9776;</div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#Course1">coursr</a></li>
-      <li><a href="#facilities">facilities</a></li>
-      <li><a href="">enroll</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#Course1"><i class="fas fa-book"></i> Courses</a></li>
+      <li><a href="#facilities"><i class="fas fa-building"></i> Facilities</a></li>
+      <li><a href="#enroll"><i class="fas fa-user-plus"></i> Enroll</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
     </ul>
   </nav>
 
@@ -41,7 +44,7 @@
       <!-- <img src="assets/img/graduated.png" alt=""> -->
     </div>
       </div>
-  <section class="banner">
+  <section class="banner parallax">
     <div class="banner-content">
       <h1>Learning Today, Leading Tomorrow</h1>
       <p>Your future begins here</p>
@@ -59,7 +62,7 @@
   <!-- coach-information  -->
 
   <div class="text">
-    <h1>Coach- Information</h1>
+    <h1><i class="fas fa-chalkboard-teacher"></i> Coach Information</h1>
   </div>
   <section class="coach-section">
 
@@ -79,8 +82,8 @@
   <!-- -------------------------------------------------------------------------------------------------- -->
 <!-- about-coaching  -->
 
-<div class="text" id="about" style="font-size: 30px;">About-coaching</div>
-    <section class="about-section" id="about">
+<div class="text" id="about" style="font-size: 30px;"><i class="fas fa-info-circle"></i> About Coaching</div>
+    <section class="about-section glassmorphism" id="about">
         <div class="about-container">
             <div class="about-content">
                 <div class="about-image" data-aos="fade-right">
@@ -112,15 +115,15 @@
 
     <section class="count-section">
       <div>
-          <div class="count-item" id="students" data-target="100">100</div>
+          <div class="count-item" id="students" data-target="100"><i class="fas fa-user-graduate"></i> 100</div>
           <div class="count-label">Students</div>
       </div>
       <div>
-          <div class="count-item" id="courses" data-target="10">10</div>
+          <div class="count-item" id="courses" data-target="10"><i class="fas fa-book"></i> 10</div>
           <div class="count-label">Courses</div>
       </div>
       <div>
-          <div class="count-item" id="faculty" data-target="5">5</div>
+          <div class="count-item" id="faculty" data-target="5"><i class="fas fa-chalkboard-teacher"></i> 5</div>
           <div class="count-label">Faculty</div>
       </div>
   </section>
@@ -132,7 +135,7 @@
    <!-- course-or-study-matereal  -->
 
    <section class="courses-section" id="Course1">
-    <h2>Our Courses & Facilities</h2>
+    <h2><i class="fas fa-book"></i> Our Courses & Facilities</h2>
     <div class="courses-container">
         <div class="course-card" style="--delay: 0.2s">
             <div class="course-title">Chemistry</div>
@@ -160,8 +163,8 @@
 <!-- ---------------------------------------------------------------------------  -->
 
         <!-- study source  -->
-        <div class="resources-section">
-            <h2>📘 Study Materials & Resources</h2>
+        <div class="resources-section glassmorphism">
+            <h2><i class="fas fa-book-open"></i> Study Materials & Resources</h2>
             <p>Download Notes <br>and<br> Sample Papers</p>
             <a href="facility.html" target="_blank" class="download-link">Download Now</a>
         </div>
@@ -169,9 +172,9 @@
         
         <!-- ---------------------------------------------------------------------------  -->
 
-        <div class="facility-section" id="facilities">
+        <div class="facility-section glassmorphism" id="facilities">
             <div class="box-container">
-                <h1>Our Facilities</h1>
+                <h1><i class="fas fa-building"></i> Our Facilities</h1>
 <img src="images/coaching-logo.jpeg" alt="">
 <button class="facility-button"><a href="facility.html">View</a></button>
             </div>
@@ -183,7 +186,7 @@
 
 <!-- last-year-result  -->
 
-<div class="text">Last Year Result</div>
+<div class="text"><i class="fas fa-chart-line"></i> Last Year Result</div>
 
 <div class="result-body">
     <div class="container">
@@ -256,7 +259,7 @@
 <!-- motivate-section  -->
 
 <div class="text">
-  <h2 style="text-align: center;">Best Way to Be Successful</h2>
+  <h2 style="text-align: center;"><i class="fas fa-lightbulb"></i> Best Way to Be Successful</h2>
   <!-- <div class="card-container"> -->
 </div>
 <div class="motive">
@@ -281,7 +284,7 @@
 <!-- who-choose  -->
   
  <div class="why-who-choose">
-  <h2>Why Choose Us?</h2>
+  <h2><i class="fas fa-question-circle"></i> Why Choose Us?</h2>
   <p>We provide high-quality coaching with expert mentors, personalized learning, and a focus on student success.
   </p>
   <p>Join us to experience the best education for your future growth!</p><br>
@@ -297,9 +300,9 @@
 
 <div class="form-body" id="enroll">
 
-  <div class="form-container">
+  <div class="form-container glassmorphism">
 
-      <h2>Enroll in Coaching</h2>
+      <h2><i class="fas fa-user-plus"></i> Enroll in Coaching</h2>
       <form>
           <form id="enrollForm">
               <div class="form-group">
@@ -329,7 +332,7 @@
 <!-- ----------------------------------------------------------------------  -->
 
     <!-- feedback  -->
-    <div class="text">FEEDBACK</div>
+    <div class="text"><i class="fas fa-comments"></i> FEEDBACK</div>
     <div class="body-feedback">
         <div class="container" id="feedback-container">
             <div class="card" id="card-3">
@@ -361,9 +364,9 @@
      
 <!-- climate  -->
 
-<section class="climate-section">
+<section class="climate-section parallax">
   <div class="climate-content">
-      <h2>Climate is Changing Here, It is Changing Now</h2>
+      <h2><i class="fas fa-globe"></i> Climate is Changing Here, It is Changing Now</h2>
       <p>let's start corrective action immediately, before it becomes too late.</p>
       <div class="underline"></div>
   </div>
@@ -371,6 +374,18 @@
 <!-- climate end  -->
 
 <!-- ---------------------------------------------------------------------------  -->
+
+<!-- 3D Student Image Section -->
+<!-- <section class="student-image-section">
+  <div class="student-image-container">
+    <div class="student-image">
+      <img src="https://via.placeholder.com/300" alt="Student Image">
+    </div>
+    <div class="motivational-line">
+      <h2>"The future belongs to those who believe in the beauty of their dreams."</h2>
+    </div>
+  </div>
+</section> -->
 
 <!-- footer  -->
 
@@ -384,10 +399,10 @@
       <div class="footer-links">
           <h3>Quick Links</h3>
           <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Student Corner</a></li>
-              <li><a href="#">Courses</a></li>
+              <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="#"><i class="fas fa-info-circle"></i> About Us</a></li>
+              <li><a href="#"><i class="fas fa-user"></i> Student Corner</a></li>
+              <li><a href="#"><i class="fas fa-book"></i> Courses</a></li>
           </ul>
       </div>
 
@@ -426,6 +441,7 @@
  
 <!-- ----------------------------------------------------------------------  -->
 
+<button onclick="toggleGlassmorphismBlur()"></button>
   <script src="js2.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
@@ -454,6 +470,108 @@ document.addEventListener("DOMContentLoaded", () => {
         let target = parseInt(item.getAttribute("data-target"));
         animateCountUp(item, target);
     });
+});
+
+// GSAP Scroll Animation
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".banner-content", {
+    scrollTrigger: {
+      trigger: ".banner",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+  });
+
+  gsap.from(".about-text", {
+    scrollTrigger: {
+      trigger: ".about-section",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+  });
+
+  gsap.from(".about-image", {
+    scrollTrigger: {
+      trigger: ".about-section",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    x: 100,
+    opacity: 0,
+    duration: 1,
+  });
+
+  gsap.from(".courses-container", {
+    scrollTrigger: {
+      trigger: ".courses-section",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+  });
+
+  gsap.from(".facility-section", {
+    scrollTrigger: {
+      trigger: ".facility-section",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+  });
+
+  gsap.from(".resources-section", {
+    scrollTrigger: {
+      trigger: ".resources-section",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+  });
+
+  gsap.from(".climate-content", {
+    scrollTrigger: {
+      trigger: ".climate-section",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+  });
+
+  gsap.from(".result-card", {
+    scrollTrigger: {
+      trigger: ".result-body",
+      start: "top center",
+      end: "bottom center",
+      scrub: true,
+    },
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+  });
 });
   </script>
 
