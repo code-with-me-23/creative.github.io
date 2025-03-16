@@ -16,11 +16,6 @@ function closeMenu() {
 
 // count-section 
 
-AOS.init({
-    duration: 1000,
-    once: true,
-});
-
 function animateCountUp(element, target) {
     let count = 0;
     let increment = target / 100;
@@ -70,108 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         lastScrollTop = scrollTop;
     });
-});
-
-// GSAP Scroll Animation
-document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.from(".banner-content", {
-    scrollTrigger: {
-      trigger: ".banner",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    y: 100,
-    opacity: 0,
-    duration: 1,
-  });
-
-  gsap.from(".about-text", {
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    x: -100,
-    opacity: 0,
-    duration: 1,
-  });
-
-  gsap.from(".about-image", {
-    scrollTrigger: {
-      trigger: ".about-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    x: 100,
-    opacity: 0,
-    duration: 1,
-  });
-
-  gsap.from(".courses-container", {
-    scrollTrigger: {
-      trigger: ".courses-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    y: 100,
-    opacity: 0,
-    duration: 1,
-  });
-
-  gsap.from(".facility-section", {
-    scrollTrigger: {
-      trigger: ".facility-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    y: 100,
-    opacity: 0,
-    duration: 1,
-  });
-
-  gsap.from(".resources-section", {
-    scrollTrigger: {
-      trigger: ".resources-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    y: 100,
-    opacity: 0,
-    duration: 1,
-  });
-
-  gsap.from(".climate-content", {
-    scrollTrigger: {
-      trigger: ".climate-section",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    y: 100,
-    opacity: 0,
-    duration: 1,
-  });
-
-  gsap.from(".result-card", {
-    scrollTrigger: {
-      trigger: ".result-body",
-      start: "top center",
-      end: "bottom center",
-      scrub: true,
-    },
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    stagger: 0.2,
-  });
 });
 
 // count-end 
