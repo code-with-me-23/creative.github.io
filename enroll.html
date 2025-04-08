@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll - Creative Coaching</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --secondary: #FF6B6B;
+            --accent: #50E3C2;
+            --dark: #2C3E50;
+            --light: #F5F6FA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background: var(--light);
+        }
+
+        .enroll-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .course-details {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .course-icon {
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .course-title {
+            color: var(--dark);
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .enrollment-form {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .payment-option {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .payment-option:hover {
+            border-color: var(--primary);
+        }
+
+        .payment-option.selected {
+            border-color: var(--primary);
+            background: rgba(74, 144, 226, 0.1);
+        }
+
+        .payment-option i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features-list li {
+            margin: 10px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .features-list i {
+            color: var(--accent);
+        }
+
+        .payment-options {
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+
+        .qr-section {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px dashed var(--primary);
+            border-radius: 10px;
+        }
+
+        .qr-code {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            margin: 15% auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 15px;
+            text-align: center;
+            animation: modalSlide 0.3s ease;
+        }
+
+        @keyframes modalSlide {
+            from {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        .qr-container {
+            margin: 20px 0;
+        }
+
+        .qr-container img {
+            max-width: 250px;
+            margin: 20px 0;
+            border: 2px solid var(--primary);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .qr-instruction {
+            color: #666;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="enroll-container">
+        <div class="course-details">
+            <div class="course-header">
+                <i class="subject-icon"></i>
+                <h2 class="course-title">Course Title</h2>
+            </div>
+            <div class="price-tag">₹0<span>/month</span></div>
+            <ul class="features-list">
+                <!-- Features will be populated dynamically -->
+            </ul>
+        </div>
+
+        <div class="enrollment-form">
+            <h3>Student Details</h3>
+            <form id="enrollmentForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Class/Grade</label>
+                    <select required>
+                        <option value="">Select Class</option>
+                        <option value="8">Class 8</option>
+                        <option value="9">Class 9</option>
+                        <option value="10">Class 10</option>
+                        <option value="11">Class 11</option>
+                        <option value="12">Class 12</option>
+                    </select>
+                </div>
+
+                <h3>Payment Method</h3>
+                <div class="payment-options">
+                    <div class="payment-option" onclick="selectPayment(this)">
+                        <i class="fas fa-qrcode"></i>
+                        <p>Scan QR</p>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment(this)" data-upi="gpay">
+                        <i class="fab fa-google-pay"></i>
+                        <p>Google Pay</p>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment(this)" data-upi="phonepe">
+                        <i class="fas fa-phone-alt"></i>
+                        <p>PhonePe</p>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment(this)" data-upi="paytm">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <p>Paytm</p>
+                    </div>
+                </div>
+
+                <!-- Update the selectPayment function -->
+                <script>
+                    function selectPayment(option) {
+                        document.querySelectorAll('.payment-option').forEach(opt => {
+                            opt.classList.remove('selected');
+                        });
+                        option.classList.add('selected');
+
+                        const upiApp = option.getAttribute('data-upi');
+                        const amount = document.querySelector('.price-tag').textContent.match(/₹(\d+)/)[1];
+                        const merchantUPI = "merchant@upi"; // Replace with your actual UPI ID
+                        const merchantName = "Creative Coaching";
+                        const courseName = document.querySelector('.course-title').textContent;
+
+                        if (upiApp) {
+                            const upiLinks = {
+                                'gpay': `upi://pay?pa=${merchantUPI}&pn=${merchantName}&am=${amount}&tn=Fee for ${courseName}&cu=INR`,
+                                'phonepe': `phonepe://pay?pa=${merchantUPI}&pn=${merchantName}&am=${amount}&tn=Fee for ${courseName}&cu=INR`,
+                                'paytm': `paytmmp://pay?pa=${merchantUPI}&pn=${merchantName}&am=${amount}&tn=Fee for ${courseName}&cu=INR`
+                            };
+
+                            window.location.href = upiLinks[upiApp];
+                        } else if (option.querySelector('p').textContent === 'Scan QR') {
+                            document.getElementById('qrCodeSection').style.display = 'block';
+                        } else {
+                            document.getElementById('qrCodeSection').style.display = 'none';
+                        }
+                    }
+                </script>
+
+                <!-- Add this after payment-options div -->
+                <div id="qrCodeSection" class="qr-section" style="display: none;">
+                    <img src="images/qr-code.png" alt="Payment QR Code" class="qr-code">
+                    <p>Scan this QR code to pay</p>
+                </div>
+
+
+                <button type="submit" class="submit-btn">Proceed to Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add this after the enrollment-form div -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h3>Scan to Pay</h3>
+            <div class="qr-container">
+                <img src="images/payment-qr.jpg" alt="Payment QR Code">
+                <p>Amount: ₹<span id="qrAmount">0</span></p>
+                <p class="qr-instruction">Open any UPI app and scan this QR code to pay</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update the selectPayment function in your script -->
+    <script>
+        function selectPayment(option) {
+            document.querySelectorAll('.payment-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            option.classList.add('selected');
+
+            if (option.querySelector('p').textContent === 'Scan QR') {
+                const modal = document.getElementById('qrModal');
+                const amount = document.querySelector('.price-tag').textContent.match(/₹(\d+)/)[1];
+                document.getElementById('qrAmount').textContent = amount;
+                modal.style.display = 'block';
+            }
+        }
+
+        // Add this to close the modal
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.getElementById('qrModal').style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            const modal = document.getElementById('qrModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        // Get course details from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const subject = urlParams.get('subject');
+        const price = urlParams.get('price');
+        const features = JSON.parse(decodeURIComponent(urlParams.get('features')));
+
+        // Update page with course details
+        document.querySelector('.course-title').textContent = subject;
+        document.querySelector('.price-tag').innerHTML = `₹${price}<span>/month</span>`;
+
+        // Set subject icon
+        const iconMap = {
+            'Mathematics': 'fas fa-square-root-alt',
+            'Physics': 'fas fa-atom',
+            'Chemistry': 'fas fa-flask',
+            'English': 'fas fa-language',
+            'Hindi': 'fas fa-book',
+            'All Subjects Package': 'fas fa-graduation-cap'
+        };
+        document.querySelector('.subject-icon').className = `${iconMap[subject]} subject-icon`;
+
+        // Populate features
+        const featuresList = document.querySelector('.features-list');
+        features.forEach(feature => {
+            const li = document.createElement('li');
+            li.innerHTML = `<i class="fas fa-check-circle"></i> ${feature}`;
+            featuresList.appendChild(li);
+        });
+
+        function selectPayment(option) {
+            document.querySelectorAll('.payment-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            option.classList.add('selected');
+        }
+
+        document.getElementById('enrollmentForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would typically handle the form submission and payment processing
+            alert('Proceeding to payment gateway...');
+        });
+    </script>
+    <script>
+        function selectPayment(option) {
+            document.querySelectorAll('.payment-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            option.classList.add('selected');
+
+            // Show/hide QR code section
+            const qrSection = document.getElementById('qrCodeSection');
+            if (option.querySelector('p').textContent === 'Scan QR') {
+                qrSection.style.display = 'block';
+            } else {
+                qrSection.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
